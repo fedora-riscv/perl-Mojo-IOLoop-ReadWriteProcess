@@ -1,6 +1,6 @@
 Name:           perl-Mojo-IOLoop-ReadWriteProcess
-Version:        0.24
-Release:        2%{?dist}
+Version:        0.25
+Release:        1%{?dist}
 Summary:        Execute external programs or internal code blocks as separate process
 License:        GPL+ or Artistic
 
@@ -47,18 +47,19 @@ BuildRequires:  perl(lib)
 BuildRequires:  perl(utf8)
 
 Requires:       perl(Mojo::EventEmitter)
-Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+Requires:       perl(:MODULE_COMPAT_%(eval "`/usr/bin/perl -V:version`"; echo $version))
 
 %{?perl_default_filter}
 
 %description
 Mojo::IOLoop::ReadWriteProcess is yet another process manager.
+It executes external programs or internal code blocks as separate process
 
 %prep
 %setup -q -n Mojo-IOLoop-ReadWriteProcess-%{version}
 
 %build
-%{__perl} Build.PL --installdirs=vendor
+/usr/bin/perl Build.PL --installdirs=vendor
 ./Build
 
 %install
@@ -75,6 +76,10 @@ Mojo::IOLoop::ReadWriteProcess is yet another process manager.
 %{_mandir}/man3/Mojo*
 
 %changelog
+* Sun Apr 12 2020 Emmanuel Seyman <emmanuel@seyman.fr> - 0.25-1
+- Update to 0.25
+- Use /usr/bin/perl instead of %%{__perl}
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.24-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
