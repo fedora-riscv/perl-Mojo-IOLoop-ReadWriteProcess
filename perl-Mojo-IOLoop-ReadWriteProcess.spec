@@ -1,6 +1,6 @@
 Name:           perl-Mojo-IOLoop-ReadWriteProcess
 Version:        0.25
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Execute external programs or internal code blocks as separate process
 License:        GPL+ or Artistic
 
@@ -76,6 +76,9 @@ It executes external programs or internal code blocks as separate process
 %{_mandir}/man3/Mojo*
 
 %changelog
+* Tue Jun 23 2020 Jitka Plesnikova <jplesnik@redhat.com> - 0.25-2
+- Perl 5.32 rebuild
+
 * Sun Apr 12 2020 Emmanuel Seyman <emmanuel@seyman.fr> - 0.25-1
 - Update to 0.25
 - Use /usr/bin/perl instead of %%{__perl}
