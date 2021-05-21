@@ -1,6 +1,6 @@
 Name:           perl-Mojo-IOLoop-ReadWriteProcess
 Version:        0.28
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Execute external programs or internal code blocks as separate process
 License:        GPL+ or Artistic
 
@@ -76,6 +76,9 @@ It executes external programs or internal code blocks as separate process
 %{_mandir}/man3/Mojo*
 
 %changelog
+* Fri May 21 2021 Jitka Plesnikova <jplesnik@redhat.com> - 0.28-3
+- Perl 5.34 rebuild
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.28-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
