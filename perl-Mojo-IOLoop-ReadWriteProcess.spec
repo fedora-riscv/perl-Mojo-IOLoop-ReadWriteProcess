@@ -1,14 +1,11 @@
 Name:           perl-Mojo-IOLoop-ReadWriteProcess
-Version:        0.28
-Release:        5%{?dist}
+Version:        0.31
+Release:        1%{?dist}
 Summary:        Execute external programs or internal code blocks as separate process
 License:        GPL+ or Artistic
 
 URL:            https://metacpan.org/release/Mojo-IOLoop-ReadWriteProcess/
 Source0:        https://cpan.metacpan.org/authors/id/S/SZ/SZARATE/Mojo-IOLoop-ReadWriteProcess-%{version}.tar.gz
-# https://github.com/mudler/Mojo-IOLoop-ReadWriteProcess/pull/15
-# Fix prctl syscall detection on Fedora 32-bit ARM
-Patch0:         0001-Match-on-armv7l-as-well-as-arm-for-prctl-detection.patch
 
 BuildArch:      noarch
 # Build requirements
@@ -59,7 +56,7 @@ Mojo::IOLoop::ReadWriteProcess is yet another process manager.
 It executes external programs or internal code blocks as separate process
 
 %prep
-%autosetup -p1 -n Mojo-IOLoop-ReadWriteProcess-%{version}
+%setup -n Mojo-IOLoop-ReadWriteProcess-%{version}
 
 %build
 /usr/bin/perl Build.PL --installdirs=vendor
@@ -79,6 +76,10 @@ It executes external programs or internal code blocks as separate process
 %{_mandir}/man3/Mojo*
 
 %changelog
+* Sun Dec 05 2021 Emmanuel Seyman <emmanuel@seyman.fr> - 0.31-1
+- Update to 0.31
+- Drop upstreamed patch
+
 * Thu Jul 22 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.28-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
