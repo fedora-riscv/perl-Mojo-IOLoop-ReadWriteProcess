@@ -1,5 +1,5 @@
 Name:           perl-Mojo-IOLoop-ReadWriteProcess
-Version:        0.31
+Version:        0.32
 Release:        1%{?dist}
 Summary:        Execute external programs or internal code blocks as separate process
 License:        GPL+ or Artistic
@@ -42,6 +42,7 @@ BuildRequires:  perl(constant)
 # Test requirements
 BuildRequires:  perl(FindBin)
 BuildRequires:  perl(Mojo::IOLoop)
+BuildRequires:  perl(Test::Exception)
 BuildRequires:  perl(Test::More)
 BuildRequires:  perl(lib)
 BuildRequires:  perl(utf8)
@@ -76,6 +77,9 @@ It executes external programs or internal code blocks as separate process
 %{_mandir}/man3/Mojo*
 
 %changelog
+* Sun Dec 12 2021 Emmanuel Seyman <emmanuel@seyman.fr> - 0.32-1
+- Update to 0.32
+
 * Sun Dec 05 2021 Emmanuel Seyman <emmanuel@seyman.fr> - 0.31-1
 - Update to 0.31
 - Drop upstreamed patch
